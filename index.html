@@ -55,7 +55,7 @@ function newSeed() {
 
 function getSeed() {
     const raw = location.search.slice(1);
-    currentSeed = raw ? parseInt(raw, 10) : 0;
+    currentSeed = raw ? parseInt(raw, 10) : newSeed();
 
     return currentSeed;
 }
