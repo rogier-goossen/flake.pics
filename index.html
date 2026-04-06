@@ -161,7 +161,7 @@ function rotate(x, y, cos, sin) {
 function buildPath(seed) {
   const rand = prng(seed);
   const { spine, branches } = buildArm(rand);
-  
+
   const segments = [];
 
   for (let i = 0; i < spine.length - 1; i++)
@@ -216,7 +216,7 @@ document.addEventListener('pointerdown', e => {
 });
 
 document.addEventListener('pointermove', e => {
-  if (pointerY == null || !e.pressure && e.pointerType !== 'mouse' && e.buttons === 0) return;
+  if (pointerY == null || e.buttons === 0) return;
   e.preventDefault();
   strokeWidth = Math.min(8, Math.max(2, strokeWidth + (pointerY - e.clientY) * 0.01));
   pointerY = e.clientY;
